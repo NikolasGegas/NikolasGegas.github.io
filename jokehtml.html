@@ -3,14 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jokes for Friends</title>
+    <title>Fun with Friends</title>
     <link rel="stylesheet" href="./jokecss.css">
 </head>
 <body>
     <div class="container">
-        <h1>Jokes for Friends</h1>
-        <p id="joke">Click the button to get a random joke!</p>
-        <button onclick="displayJoke()">Get a Joke</button>
+        <h1>😂 Fun with Friends 😂</h1>
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Jokes')">Jokes</button>
+            <button class="tablinks" onclick="openTab(event, 'Quiz')">Quiz</button>
+            <button class="tablinks" onclick="openTab(event, 'TicTacToe')">Tic-Tac-Toe</button>
+        </div>
+
+        <div id="Jokes" class="tabcontent">
+            <h2>Jokes</h2>
+            <p id="joke">Click the button to get a random joke!</p>
+            <button onclick="displayJoke()">Get a Joke</button>
+        </div>
+
+        <div id="Quiz" class="tabcontent">
+            <h2>Quiz</h2>
+            <div id="quiz-container">
+                <p id="quiz-question">What is the capital of France?</p>
+                <button onclick="checkAnswer('A')">A. Paris</button>
+                <button onclick="checkAnswer('B')">B. London</button>
+                <button onclick="checkAnswer('C')">C. Berlin</button>
+                <button onclick="checkAnswer('D')">D. Madrid</button>
+                <p id="quiz-result"></p>
+            </div>
+        </div>
+
+        <div id="TicTacToe" class="tabcontent">
+            <h2>Tic-Tac-Toe</h2>
+            <div id="tic-tac-toe-board">
+                <div class="tic-tac-toe-cell" onclick="makeMove(this, 0)"></div>
+                <div class="tic-tac-toe-cell" onclick="makeMove(this, 1)"></div>
+                <div class="tic-tac-toe-cell" onclick="makeMove(this, 2)"></div>
+                <div class="tic-tac-toe-cell" onclick="makeMove(this, 3)"></div>
+                <div class="tic-tac-toe-cell" onclick="makeMove(this, 4)"></div>
+                <div class="tic-tac-toe-cell" onclick="makeMove(this, 5)"></div>
+                <div class="tic-tac-toe-cell" onclick="makeMove(this, 6)"></div>
+                <div class="tic-tac-toe-cell" onclick="makeMove(this, 7)"></div>
+                <div class="tic-tac-toe-cell" onclick="makeMove(this, 8)"></div>
+            </div>
+            <button onclick="resetGame()">Reset Game</button>
+            <p id="game-result"></p>
+        </div>
     </div>
     <script src="./jokejs.js"></script>
 </body>
